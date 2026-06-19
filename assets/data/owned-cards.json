@@ -15,7 +15,8 @@
       "priceSource": "Collectr",
       "itemNumber": "SM70",
       "variant": "Holofoil",
-      "ownershipPriceVariant": "psa10"
+      "ownershipPriceVariant": "psa10",
+      "cardId": "pricecharting:/game/pokemon-promo/shining-ho-oh-sm70"
     },
     {
       "source": "custom",
@@ -27,7 +28,8 @@
       "currentPrice": 475.64,
       "currency": "USD",
       "image": "https://public.getcollectr.com/public-assets/products/product_668497.png",
-      "priceSource": "Collectr"
+      "priceSource": "Collectr",
+      "cardId": "pricecharting:/game/pokemon-ascended-heroes/elite-trainer-box-pokemon-center"
     },
     {
       "source": "custom",
@@ -42,7 +44,8 @@
       "priceSource": "Collectr",
       "itemNumber": "57",
       "variant": "Holofoil",
-      "ownershipPriceVariant": "psa10"
+      "ownershipPriceVariant": "psa10",
+      "cardId": "pricecharting:/game/pokemon-shining-legends/shining-arceus-57"
     },
     {
       "source": "custom",
@@ -57,7 +60,8 @@
       "priceSource": "Collectr",
       "itemNumber": "SWSH136",
       "variant": "Holofoil",
-      "ownershipPriceVariant": "psa10"
+      "ownershipPriceVariant": "psa10",
+      "cardId": "pricecharting:/game/pokemon-celebrations/mimikyu-swsh136"
     },
     {
       "source": "custom",
@@ -71,7 +75,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_477057.jpg",
       "priceSource": "Collectr",
       "itemNumber": "GG44/GG70",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-crown-zenith/mewtwo-vstar-gg44"
     },
     {
       "source": "custom",
@@ -83,7 +88,8 @@
       "currentPrice": 234.9,
       "currency": "USD",
       "image": "https://public.getcollectr.com/public-assets/products/product_684444.png",
-      "priceSource": "Collectr"
+      "priceSource": "Collectr",
+      "cardId": "pricecharting:/game/pokemon-chaos-rising/booster-box"
     },
     {
       "source": "custom",
@@ -95,7 +101,8 @@
       "currentPrice": 218.54,
       "currency": "USD",
       "image": "https://public.getcollectr.com/public-assets/products/product_672394.png",
-      "priceSource": "Collectr"
+      "priceSource": "Collectr",
+      "cardId": "pricecharting:/game/pokemon-perfect-order/booster-box"
     },
     {
       "source": "custom",
@@ -110,7 +117,8 @@
       "priceSource": "Collectr",
       "itemNumber": "9",
       "variant": "Holofoil",
-      "ownershipPriceVariant": "psa10"
+      "ownershipPriceVariant": "psa10",
+      "cardId": "pricecharting:/game/pokemon-shining-legends/shining-genesect-9"
     },
     {
       "source": "custom",
@@ -122,7 +130,8 @@
       "currentPrice": 153.15,
       "currency": "USD",
       "image": "https://public.getcollectr.com/public-assets/products/product_684452.png",
-      "priceSource": "Collectr"
+      "priceSource": "Collectr",
+      "cardId": "pricecharting:/game/pokemon-chaos-rising/elite-trainer-box-pokemon-center"
     },
     {
       "source": "custom",
@@ -134,7 +143,8 @@
       "currentPrice": 146.03,
       "currency": "USD",
       "image": "https://public.getcollectr.com/public-assets/products/product_654136.png",
-      "priceSource": "Collectr"
+      "priceSource": "Collectr",
+      "cardId": "pricecharting:/game/pokemon-phantasmal-flames/elite-trainer-box"
     },
     {
       "source": "custom",
@@ -146,7 +156,8 @@
       "currentPrice": 138.62,
       "currency": "USD",
       "image": "https://public.getcollectr.com/public-assets/products/product_672404.png",
-      "priceSource": "Collectr"
+      "priceSource": "Collectr",
+      "cardId": "pricecharting:/game/pokemon-perfect-order/elite-trainer-box-pokemon-center"
     },
     {
       "source": "custom",
@@ -158,7 +169,8 @@
       "currentPrice": 124.69,
       "currency": "USD",
       "image": "https://public.getcollectr.com/public-assets/products/product_565630.png",
-      "priceSource": "Collectr"
+      "priceSource": "Collectr",
+      "cardId": "pricecharting:/game/pokemon-surging-sparks/elite-trainer-box"
     },
     {
       "source": "custom",
@@ -172,7 +184,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_633029.jpg",
       "priceSource": "Collectr",
       "itemNumber": "229/182",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-destined-rivals/team-rocket%27s-moltres-ex-229"
     },
     {
       "source": "custom",
@@ -186,7 +199,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_523880.jpg",
       "priceSource": "Collectr",
       "itemNumber": "199/182",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-paradox-rift/groudon-199"
     },
     {
       "source": "custom",
@@ -200,7 +214,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_146719.jpg",
       "priceSource": "Collectr",
       "itemNumber": "56",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-shining-legends/shining-rayquaza-56"
     },
     {
       "source": "custom",
@@ -214,7 +229,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_517048.jpg",
       "priceSource": "Collectr",
       "itemNumber": "202/165",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-scarlet-&-violet-151/zapdos-ex-202"
     },
     {
       "source": "custom",
@@ -226,7 +242,8 @@
       "currentPrice": 97.93,
       "currency": "USD",
       "image": "https://public.getcollectr.com/public-assets/products/product_668541.png",
-      "priceSource": "Collectr"
+      "priceSource": "Collectr",
+      "cardId": "pricecharting:/game/pokemon-ascended-heroes/booster-bundle"
     },
     {
       "source": "custom",
@@ -240,7 +257,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_653113.jpg",
       "priceSource": "Collectr",
       "itemNumber": "309/298",
-      "variant": "Foil"
+      "variant": "Foil",
+      "cardId": "pricecharting:/game/riftbound-origins/miss-fortune-bounty-hunter-signature-309"
     },
     {
       "source": "custom",
@@ -252,7 +270,8 @@
       "currentPrice": 79.1,
       "currency": "USD",
       "image": "https://public.getcollectr.com/public-assets/products/product_654160.png",
-      "priceSource": "Collectr"
+      "priceSource": "Collectr",
+      "cardId": "pricecharting:/game/pokemon-phantasmal-flames/booster-bundle"
     },
     {
       "source": "custom",
@@ -266,7 +285,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_477354.webp",
       "priceSource": "Collectr",
       "itemNumber": "GG45/GG70",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-crown-zenith/deoxys-vmax-gg45"
     },
     {
       "source": "custom",
@@ -280,7 +300,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_197688.jpg",
       "priceSource": "Collectr",
       "itemNumber": "44/68",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-hidden-fates/moltres-&-zapdos-&-articuno-gx-44"
     },
     {
       "source": "custom",
@@ -294,7 +315,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_478027.jpg",
       "priceSource": "Collectr",
       "itemNumber": "GG10/GG70",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-crown-zenith/mew-gg10"
     },
     {
       "source": "custom",
@@ -306,7 +328,8 @@
       "currentPrice": 67.06,
       "currency": "USD",
       "image": "https://public.getcollectr.com/public-assets/products/product_528045.png",
-      "priceSource": "Collectr"
+      "priceSource": "Collectr",
+      "cardId": "pricecharting:/game/pokemon-paldean-fates/tech-sticker-collection-greavard"
     },
     {
       "source": "custom",
@@ -320,7 +343,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_284258.png",
       "priceSource": "Collectr",
       "itemNumber": "TG05/TG30",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-lost-origin/pikachu-tg05"
     },
     {
       "source": "custom",
@@ -334,7 +358,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_518872.jpg",
       "priceSource": "Collectr",
       "itemNumber": "052",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-promo/mewtwo-52"
     },
     {
       "source": "custom",
@@ -346,7 +371,8 @@
       "currentPrice": 45.08,
       "currency": "USD",
       "image": "https://public.getcollectr.com/public-assets/products/product_684456.png",
-      "priceSource": "Collectr"
+      "priceSource": "Collectr",
+      "cardId": "pricecharting:/game/pokemon-chaos-rising/booster-bundle"
     },
     {
       "source": "custom",
@@ -360,7 +386,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_659612.png",
       "priceSource": "Collectr",
       "itemNumber": "023",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-promo/mega-charizard-x-ex-23"
     },
     {
       "source": "custom",
@@ -374,7 +401,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_131698.jpg",
       "priceSource": "Collectr",
       "itemNumber": "54a/124",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-fates-collide/zygarde-ex-54a"
     },
     {
       "source": "custom",
@@ -386,7 +414,8 @@
       "currentPrice": 39.41,
       "currency": "USD",
       "image": "https://public.getcollectr.com/public-assets/products/product_654188.png",
-      "priceSource": "Collectr"
+      "priceSource": "Collectr",
+      "cardId": "pricecharting:/game/pokemon-promo/mega-latias-ex-box"
     },
     {
       "source": "custom",
@@ -398,7 +427,8 @@
       "currentPrice": 37.3,
       "currency": "USD",
       "image": "https://public.getcollectr.com/public-assets/products/product_672396.png",
-      "priceSource": "Collectr"
+      "priceSource": "Collectr",
+      "cardId": "pricecharting:/game/pokemon-perfect-order/booster-bundle"
     },
     {
       "source": "custom",
@@ -412,7 +442,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_632990.jpg",
       "priceSource": "Collectr",
       "itemNumber": "190/182",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-destined-rivals/ethan%27s-typhlosion-190"
     },
     {
       "source": "custom",
@@ -426,7 +457,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_633003.webp",
       "priceSource": "Collectr",
       "itemNumber": "203/182",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-destined-rivals/team-rocket%27s-meowth-203"
     },
     {
       "source": "custom",
@@ -440,7 +472,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_516713.jpg",
       "priceSource": "Collectr",
       "itemNumber": "150/165",
-      "variant": "Reverse Holofoil"
+      "variant": "Reverse Holofoil",
+      "cardId": "pricecharting:/game/pokemon-scarlet-&-violet-151/mewtwo-holo-150"
     },
     {
       "source": "custom",
@@ -454,7 +487,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_490067.webp",
       "priceSource": "Collectr",
       "itemNumber": "206/198",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-scarlet-&-violet/wiglett-206"
     },
     {
       "source": "custom",
@@ -468,7 +502,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_500263.jpg",
       "priceSource": "Collectr",
       "itemNumber": "027",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-promo/pikachu-paldea-27"
     },
     {
       "source": "custom",
@@ -482,7 +517,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_550230.jpg",
       "priceSource": "Collectr",
       "itemNumber": "186/167",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-twilight-masquerade/tatsugiri-186"
     },
     {
       "source": "custom",
@@ -496,7 +532,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_664012.png",
       "priceSource": "Collectr",
       "itemNumber": "008/094",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-phantasmal-flames/genesect-stamped-8"
     },
     {
       "source": "custom",
@@ -508,7 +545,8 @@
       "currentPrice": 20.48,
       "currency": "USD",
       "image": "https://public.getcollectr.com/public-assets/products/product_656995.png",
-      "priceSource": "Collectr"
+      "priceSource": "Collectr",
+      "cardId": "pricecharting:/game/pokemon-promo/2-pack-blister-pack-team-rocket%27s-articuno-zapdos-&-tyranitar"
     },
     {
       "source": "custom",
@@ -522,7 +560,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_272492.jpg",
       "priceSource": "Collectr",
       "itemNumber": "TG20/TG30",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-astral-radiance/galarian-moltres-v-tg20"
     },
     {
       "source": "custom",
@@ -536,7 +575,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_664098.jpg",
       "priceSource": "Collectr",
       "itemNumber": "017/094",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-phantasmal-flames/reshiram-stamped-17"
     },
     {
       "source": "custom",
@@ -550,7 +590,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_475642.jpg",
       "priceSource": "Collectr",
       "itemNumber": "SWSH291",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-promo/lucario-vstar-swsh291"
     },
     {
       "source": "custom",
@@ -564,7 +605,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_450289.jpg",
       "priceSource": "Collectr",
       "itemNumber": "138/195",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-silver-tempest/lugia-v-138"
     },
     {
       "source": "custom",
@@ -578,7 +620,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_664010.jpg",
       "priceSource": "Collectr",
       "itemNumber": "024",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-promo/oricorio-ex-24"
     },
     {
       "source": "custom",
@@ -592,7 +635,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_633004.webp",
       "priceSource": "Collectr",
       "itemNumber": "204/182",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-destined-rivals/kangaskhan-204"
     },
     {
       "source": "custom",
@@ -606,7 +650,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_590003.png",
       "priceSource": "Collectr",
       "itemNumber": "204/191",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-surging-sparks/mesprit-204"
     },
     {
       "source": "custom",
@@ -618,7 +663,8 @@
       "currentPrice": 8.82,
       "currency": "USD",
       "image": "https://public.getcollectr.com/public-assets/products/product_644354.png",
-      "priceSource": "Collectr"
+      "priceSource": "Collectr",
+      "cardId": "pricecharting:/game/pokemon-mega-evolution/sleeved-booster-pack"
     },
     {
       "source": "custom",
@@ -632,7 +678,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_542893.jpg",
       "priceSource": "Collectr",
       "itemNumber": "172/162",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-temporal-forces/cutiefly-172"
     },
     {
       "source": "custom",
@@ -646,7 +693,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_146681.jpg",
       "priceSource": "Collectr",
       "itemNumber": "27",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-shining-legends/shining-volcanion-27"
     },
     {
       "source": "custom",
@@ -660,7 +708,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_654493.jpg",
       "priceSource": "Collectr",
       "itemNumber": "154/132",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-mega-evolution/stufful-154"
     },
     {
       "source": "custom",
@@ -674,7 +723,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_272480.jpg",
       "priceSource": "Collectr",
       "itemNumber": "TG09/TG30",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-astral-radiance/mightyena-tg09"
     },
     {
       "source": "custom",
@@ -688,7 +738,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_623591.jpg",
       "priceSource": "Collectr",
       "itemNumber": "164/159",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-journey-together/lillie%27s-ribombee-164"
     },
     {
       "source": "custom",
@@ -702,7 +753,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_452025.jpg",
       "priceSource": "Collectr",
       "itemNumber": "TG10/TG30",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-silver-tempest/smeargle-tg10"
     },
     {
       "source": "custom",
@@ -716,7 +768,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_272246.jpg",
       "priceSource": "Collectr",
       "itemNumber": "046/189",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-astral-radiance/radiant-greninja-46"
     },
     {
       "source": "custom",
@@ -730,7 +783,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_10017843.png",
       "priceSource": "Collectr",
       "itemNumber": "117/106",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-japanese-super-electric-breaker/slakoth-117"
     },
     {
       "source": "custom",
@@ -744,7 +798,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_662209.webp",
       "priceSource": "Collectr",
       "itemNumber": "102/094",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-phantasmal-flames/paldean-wooper-102"
     },
     {
       "source": "custom",
@@ -758,7 +813,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_452018.jpg",
       "priceSource": "Collectr",
       "itemNumber": "TG04/TG30",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-silver-tempest/jynx-tg04"
     },
     {
       "source": "custom",
@@ -772,7 +828,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_451790.jpg",
       "priceSource": "Collectr",
       "itemNumber": "140/195",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-silver-tempest/ho-oh-v-140"
     },
     {
       "source": "custom",
@@ -786,7 +843,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_534731.jpg",
       "priceSource": "Collectr",
       "itemNumber": "224/091",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-paldean-fates/wugtrio-224"
     },
     {
       "source": "custom",
@@ -800,7 +858,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_232478.jpg",
       "priceSource": "Collectr",
       "itemNumber": "038/072",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-shining-fates/morpeko-vmax-38"
     },
     {
       "source": "custom",
@@ -814,7 +873,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_478031.jpg",
       "priceSource": "Collectr",
       "itemNumber": "GG14/GG70",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-crown-zenith/comfey-gg14"
     },
     {
       "source": "custom",
@@ -828,7 +888,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_272477.jpg",
       "priceSource": "Collectr",
       "itemNumber": "TG06/TG30",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-astral-radiance/wyrdeer-tg06"
     },
     {
       "source": "custom",
@@ -842,7 +903,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_517273.jpg",
       "priceSource": "Collectr",
       "itemNumber": "048",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-promo/squirtle-48"
     },
     {
       "source": "custom",
@@ -856,7 +918,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_517272.jpg",
       "priceSource": "Collectr",
       "itemNumber": "047",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-promo/charmander-47"
     },
     {
       "source": "custom",
@@ -870,7 +933,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_517271.jpg",
       "priceSource": "Collectr",
       "itemNumber": "046",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-promo/bulbasaur-46"
     },
     {
       "source": "custom",
@@ -884,7 +948,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_451394.jpg",
       "priceSource": "Collectr",
       "itemNumber": "059/195",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-silver-tempest/radiant-alakazam-59"
     },
     {
       "source": "custom",
@@ -898,7 +963,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_451720.jpg",
       "priceSource": "Collectr",
       "itemNumber": "066/195",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-silver-tempest/unown-vstar-66"
     },
     {
       "source": "custom",
@@ -912,7 +978,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_564137.jpg",
       "priceSource": "Collectr",
       "itemNumber": "129",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-promo/pecharunt-129"
     },
     {
       "source": "custom",
@@ -926,7 +993,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_219399.jpg",
       "priceSource": "Collectr",
       "itemNumber": "099/189",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-darkness-ablaze/galarian-slowbro-v-99"
     },
     {
       "source": "custom",
@@ -940,7 +1008,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_263813.jpg",
       "priceSource": "Collectr",
       "itemNumber": "095/172",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-brilliant-stars/morpeko-v-95"
     },
     {
       "source": "custom",
@@ -954,7 +1023,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_284032.png",
       "priceSource": "Collectr",
       "itemNumber": "124/196",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-lost-origin/radiant-steelix-124"
     },
     {
       "source": "custom",
@@ -968,7 +1038,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_632912.jpg",
       "priceSource": "Collectr",
       "itemNumber": "104/182",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-destined-rivals/cynthia%27s-garchomp-ex-104"
     },
     {
       "source": "custom",
@@ -982,7 +1053,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_232475.jpg",
       "priceSource": "Collectr",
       "itemNumber": "037/072",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-shining-fates/morpeko-v-37"
     },
     {
       "source": "custom",
@@ -996,7 +1068,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_654443.jpg",
       "priceSource": "Collectr",
       "itemNumber": "104/132",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-mega-evolution/mega-kangaskhan-ex-104"
     },
     {
       "source": "custom",
@@ -1010,7 +1083,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_630824.jpg",
       "priceSource": "Collectr",
       "itemNumber": "145/182",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-destined-rivals/steven%27s-metagross-ex-145"
     },
     {
       "source": "custom",
@@ -1024,7 +1098,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_536070.jpg",
       "priceSource": "Collectr",
       "itemNumber": "069",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-promo/fidough-69"
     },
     {
       "source": "custom",
@@ -1038,7 +1113,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_523770.jpg",
       "priceSource": "Collectr",
       "itemNumber": "100/182",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-paradox-rift/toxtricity-ex-holo-100"
     },
     {
       "source": "custom",
@@ -1052,7 +1128,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_654399.jpg",
       "priceSource": "Collectr",
       "itemNumber": "060/132",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-mega-evolution/mega-gardevoir-ex-60"
     },
     {
       "source": "custom",
@@ -1066,7 +1143,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_589945.png",
       "priceSource": "Collectr",
       "itemNumber": "160/191",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-surging-sparks/flamigo-ex-160"
     },
     {
       "source": "custom",
@@ -1080,7 +1158,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_662206.webp",
       "priceSource": "Collectr",
       "itemNumber": "018/094",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-phantasmal-flames/oricorio-ex-18"
     },
     {
       "source": "custom",
@@ -1094,7 +1173,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_451703.jpg",
       "priceSource": "Collectr",
       "itemNumber": "049/195",
-      "variant": "Normal"
+      "variant": "Normal",
+      "cardId": "pricecharting:/game/pokemon-silver-tempest/pikachu-49"
     },
     {
       "source": "custom",
@@ -1108,7 +1188,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_654427_2.png",
       "priceSource": "Collectr",
       "itemNumber": "088/132",
-      "variant": "Reverse Holofoil"
+      "variant": "Reverse Holofoil",
+      "cardId": "pricecharting:/game/pokemon-mega-evolution/yveltal-88"
     },
     {
       "source": "custom",
@@ -1122,7 +1203,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_630812.jpg",
       "priceSource": "Collectr",
       "itemNumber": "045/182",
-      "variant": "Normal"
+      "variant": "Normal",
+      "cardId": "pricecharting:/game/pokemon-destined-rivals/misty%27s-psyduck-45"
     },
     {
       "source": "custom",
@@ -1136,7 +1218,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_630822.jpg",
       "priceSource": "Collectr",
       "itemNumber": "096/182",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-destined-rivals/team-rocket%27s-tyranitar-96"
     },
     {
       "source": "custom",
@@ -1150,7 +1233,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_250314.jpg",
       "priceSource": "Collectr",
       "itemNumber": "017/025",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-celebrations/groudon-17"
     },
     {
       "source": "custom",
@@ -1164,7 +1248,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_542828.jpg",
       "priceSource": "Collectr",
       "itemNumber": "084/162",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-temporal-forces/relicanth-holo-84"
     },
     {
       "source": "custom",
@@ -1178,7 +1263,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_654450_2.png",
       "priceSource": "Collectr",
       "itemNumber": "111/132",
-      "variant": "Reverse Holofoil"
+      "variant": "Reverse Holofoil",
+      "cardId": "pricecharting:/game/pokemon-mega-evolution/stufful-111"
     },
     {
       "source": "custom",
@@ -1192,7 +1278,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_250311.jpg",
       "priceSource": "Collectr",
       "itemNumber": "013/025",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-celebrations/cosmog-13"
     },
     {
       "source": "custom",
@@ -1206,7 +1293,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_630818.jpg",
       "priceSource": "Collectr",
       "itemNumber": "070/182",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-destined-rivals/team-rocket%27s-zapdos-70"
     },
     {
       "source": "custom",
@@ -1220,7 +1308,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_654373.png",
       "priceSource": "Collectr",
       "itemNumber": "034/132",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-mega-evolution/kyogre-34"
     },
     {
       "source": "custom",
@@ -1234,7 +1323,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_654427.png",
       "priceSource": "Collectr",
       "itemNumber": "088/132",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-mega-evolution/yveltal-88"
     },
     {
       "source": "custom",
@@ -1248,7 +1338,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_542821.jpg",
       "priceSource": "Collectr",
       "itemNumber": "077/162",
-      "variant": "Reverse Holofoil"
+      "variant": "Reverse Holofoil",
+      "cardId": "pricecharting:/game/pokemon-temporal-forces/scream-tail-77"
     },
     {
       "source": "custom",
@@ -1262,7 +1353,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_590035.png",
       "priceSource": "Collectr",
       "itemNumber": "013/191",
-      "variant": "Reverse Holofoil"
+      "variant": "Reverse Holofoil",
+      "cardId": "pricecharting:/game/pokemon-surging-sparks/rellor-13"
     },
     {
       "source": "custom",
@@ -1276,7 +1368,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_590078.png",
       "priceSource": "Collectr",
       "itemNumber": "072/191",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-surging-sparks/togekiss-72"
     },
     {
       "source": "custom",
@@ -1290,7 +1383,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_589897.png",
       "priceSource": "Collectr",
       "itemNumber": "033/191",
-      "variant": "Reverse Holofoil"
+      "variant": "Reverse Holofoil",
+      "cardId": "pricecharting:/game/pokemon-surging-sparks/charcadet-reverse-holo-33"
     },
     {
       "source": "custom",
@@ -1304,7 +1398,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_590079.png",
       "priceSource": "Collectr",
       "itemNumber": "070/191",
-      "variant": "Normal"
+      "variant": "Normal",
+      "cardId": "pricecharting:/game/pokemon-surging-sparks/togepi-70"
     },
     {
       "source": "custom",
@@ -1318,7 +1413,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_523727.jpg",
       "priceSource": "Collectr",
       "itemNumber": "073/182",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-paradox-rift/latios-holo-73"
     },
     {
       "source": "custom",
@@ -1332,7 +1428,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_589953.png",
       "priceSource": "Collectr",
       "itemNumber": "107/191",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-surging-sparks/gastrodon-107"
     },
     {
       "source": "custom",
@@ -1346,7 +1443,8 @@
       "image": "https://public.getcollectr.com/public-assets/products/product_590033.png",
       "priceSource": "Collectr",
       "itemNumber": "014/191",
-      "variant": "Holofoil"
+      "variant": "Holofoil",
+      "cardId": "pricecharting:/game/pokemon-surging-sparks/rabsca-holo-14"
     }
   ]
 }

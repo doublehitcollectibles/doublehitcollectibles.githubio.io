@@ -1,19 +1,23 @@
 #!/usr/bin/env node
-// Import the local owned-cards.json inventory into the live collection worker DB.
+// Import the local owned-cards.json inventory into the live collection worker DB,
+// backing each item with a PriceCharting product id so the worker tracks live
+// raw / PSA 10 pricing and builds price history (the price chart).
 //
 // The public collection page reads from the Cloudflare worker / D1 database when
-// `pokemon_api_base_url` is configured. This script logs in as the admin user and
-// replaces the stored collection with the entries in assets/data/owned-cards.json
-// (which mirrors the Collectr showcase).
+// `pokemon_api_base_url` is configured. Plain custom entries (a static price) show
+// no live pricing or chart; entries whose cardId is a `pricecharting:/game/...` id
+// are tracked and refreshed. This script resolves that id for each item via the
+// worker's public PriceCharting search, then replaces the stored collection.
 //
 // Usage (from workers/pricing-service):
+//   node ./scripts/import-collectr-showcase.mjs --dry-run   # resolve + print matches, no writes
 //   ADMIN_USERNAME=you ADMIN_PASSWORD=secret node ./scripts/import-collectr-showcase.mjs
-// or run without env vars and you'll be prompted (password input is hidden):
-//   node ./scripts/import-collectr-showcase.mjs
+//   node ./scripts/import-collectr-showcase.mjs             # prompts for credentials (hidden)
 //
 // Flags:
+//   --dry-run         Resolve PriceCharting ids and print the match table; make no writes.
 //   --keep-existing   Do not delete current DB entries before importing.
-//   --dry-run         Log in and report what would change, but make no writes.
+//   --no-resolve      Skip PriceCharting matching; import entries exactly as in the JSON.
 //   --api <url>       Override the worker base URL.
 
 import { readFile } from "node:fs/promises";
@@ -25,34 +29,105 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const OWNED_CARDS_PATH = resolve(__dirname, "../../../assets/data/owned-cards.json");
 
 const args = process.argv.slice(2);
-function flag(name) {
-  return args.includes(name);
-}
-function option(name, fallback) {
+const flag = (name) => args.includes(name);
+const option = (name, fallback) => {
   const i = args.indexOf(name);
   return i !== -1 && args[i + 1] ? args[i + 1] : fallback;
-}
+};
 
-const API_BASE = (
-  option("--api", process.env.WORKER_API_BASE || "https://doublehit-pricing-service.0x00c0de.workers.dev")
+const API_BASE = option(
+  "--api",
+  process.env.WORKER_API_BASE || "https://doublehit-pricing-service.0x00c0de.workers.dev",
 ).replace(/\/$/, "");
 const KEEP_EXISTING = flag("--keep-existing");
 const DRY_RUN = flag("--dry-run");
+const NO_RESOLVE = flag("--no-resolve");
 
+// --- matching helpers (validated against the live PriceCharting search) ---
+const norm = (s) => String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").replace(/\s+/g, " ").trim();
+const stripZero = (s) => String(s || "").replace(/\b0+(\d)/g, "$1");
+const numCore = (n) => String(n || "").trim().replace(/^#/, "").split("/")[0].trim();
+const isPcId = (v) => /^pricecharting:(\/game\/|https:\/\/www\.pricecharting\.com\/game\/)/i.test(String(v || "").trim());
+
+const SEALED_STOPWORDS = new Set([
+  "the", "and", "pokemon", "box", "pack", "collection", "elite", "trainer", "booster",
+  "bundle", "center", "exclusive", "sleeved", "blister", "tech", "sticker", "premium",
+  "special", "tin", "set", "mini", "build", "battle", "deck", "pokmemon", "ex", "card",
+  "cards", "products", "miscellaneous", "2", "pack2", "2pack",
+]);
+
+function distinctiveTokens(label) {
+  return norm(label).split(" ").filter((w) => w.length >= 4 && !SEALED_STOPWORDS.has(w));
+}
+
+function sleep(ms) {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
+async function searchPriceCharting(q) {
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const r = await fetch(`${API_BASE}/api/pricecharting/search?q=${encodeURIComponent(q)}`, {
+        headers: { accept: "application/json" },
+      });
+      if (!r.ok) throw new Error(`search ${r.status}`);
+      const j = await r.json();
+      return Array.isArray(j.cards) ? j.cards : [];
+    } catch (err) {
+      if (attempt === 2) throw err;
+      await sleep(400 * (attempt + 1));
+    }
+  }
+  return [];
+}
+
+async function resolveCardId(card) {
+  const sealed = card.category === "Sealed Product" || !card.itemNumber;
+  const baseName = String(card.label || "").replace(/\s*\(Graded\)\s*$/i, "").trim();
+  const series = String(card.series || "").trim();
+
+  if (sealed) {
+    const nameForQuery = baseName.replace(/[()]/g, " ").replace(/&/g, " ").replace(/\s+/g, " ").trim();
+    const tokens = distinctiveTokens(baseName);
+    const tries = [`${series} ${nameForQuery}`.trim(), nameForQuery, `${nameForQuery} ${series}`.trim()];
+    for (const q of tries) {
+      const cards = await searchPriceCharting(q);
+      const hit = cards.find((x) => {
+        const hay = norm(`${x.title} ${x.setName}`);
+        return tokens.length ? tokens.some((t) => hay.includes(t)) : Boolean(x.id);
+      });
+      if (hit) return { id: hit.id, title: hit.title, setName: hit.setName, query: q };
+      await sleep(120);
+    }
+    return null;
+  }
+
+  const n = numCore(card.itemNumber);
+  const nameWord = norm(baseName).split(" ")[0];
+  const tries = [`${baseName} ${n}`, `${baseName} ${stripZero(n)}`, `${series} ${baseName} ${n}`, baseName];
+  for (const q of tries) {
+    const cards = await searchPriceCharting(q);
+    const hit = cards.find((x) => {
+      const t = stripZero(norm(x.title));
+      return t.includes(stripZero(norm(n))) && t.includes(nameWord);
+    });
+    if (hit) return { id: hit.id, title: hit.title, setName: hit.setName, query: q };
+    await sleep(120);
+  }
+  return null;
+}
+
+// --- prompt / credentials ---
 function prompt(question, { hidden = false } = {}) {
   return new Promise((resolvePrompt) => {
     const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
     if (!hidden) {
-      rl.question(question, (answer) => {
-        rl.close();
-        resolvePrompt(answer.trim());
-      });
+      rl.question(question, (a) => { rl.close(); resolvePrompt(a.trim()); });
       return;
     }
-    // Hidden input: mute echoed characters.
     const onData = (char) => {
       const s = char.toString();
-      if (s === "\n" || s === "\r" || s === "") {
+      if (s === "\n" || s === "\r" || s === "") {
         process.stdin.removeListener("data", onData);
       } else {
         readline.clearLine(process.stdout, 0);
@@ -62,11 +137,7 @@ function prompt(question, { hidden = false } = {}) {
     };
     process.stdout.write(question);
     process.stdin.on("data", onData);
-    rl.question("", (answer) => {
-      rl.close();
-      process.stdout.write("\n");
-      resolvePrompt(answer.trim());
-    });
+    rl.question("", (a) => { rl.close(); process.stdout.write("\n"); resolvePrompt(a.trim()); });
   });
 }
 
@@ -75,9 +146,7 @@ async function getCredentials() {
   let password = process.env.ADMIN_PASSWORD;
   if (!username) username = await prompt("Admin username: ");
   if (!password) password = await prompt("Admin password: ", { hidden: true });
-  if (!username || !password) {
-    throw new Error("Username and password are required.");
-  }
+  if (!username || !password) throw new Error("Username and password are required.");
   return { username, password };
 }
 
@@ -91,19 +160,12 @@ async function api(path, { method = "GET", token, body } = {}) {
   });
   const text = await res.text();
   let data;
-  try {
-    data = text ? JSON.parse(text) : {};
-  } catch {
-    data = { raw: text };
-  }
-  if (!res.ok) {
-    throw new Error(`${method} ${path} -> ${res.status}: ${data.error || text}`);
-  }
+  try { data = text ? JSON.parse(text) : {}; } catch { data = { raw: text }; }
+  if (!res.ok) throw new Error(`${method} ${path} -> ${res.status}: ${data.error || text}`);
   return data;
 }
 
 function toEntryBody(card) {
-  // Map an owned-cards.json card to the worker's create payload.
   return {
     source: card.source || "custom",
     cardId: card.cardId,
@@ -136,6 +198,33 @@ async function main() {
   console.log(`Loaded ${cards.length} entries from ${OWNED_CARDS_PATH}`);
   if (!cards.length) throw new Error("owned-cards.json has no cards to import.");
 
+  // Resolve PriceCharting ids so the worker tracks live pricing + history.
+  const unmatched = [];
+  if (!NO_RESOLVE) {
+    console.log("Resolving PriceCharting product ids (for live pricing + chart)...");
+    for (let i = 0; i < cards.length; i++) {
+      const card = cards[i];
+      if (isPcId(card.cardId)) continue; // already linked
+      let match = null;
+      try { match = await resolveCardId(card); } catch (err) { /* fall through */ }
+      if (match) {
+        card.cardId = match.id;
+        console.log(`  [${i + 1}/${cards.length}] ${card.label}  ->  ${match.title} | ${match.setName}`);
+      } else {
+        unmatched.push(card.label);
+        console.log(`  [${i + 1}/${cards.length}] ${card.label}  ->  (no match; will stay static)`);
+      }
+      await sleep(100);
+    }
+    const linked = cards.filter((c) => isPcId(c.cardId)).length;
+    console.log(`Linked ${linked}/${cards.length} to PriceCharting.${unmatched.length ? ` Unmatched: ${unmatched.join(", ")}` : ""}`);
+  }
+
+  if (DRY_RUN) {
+    console.log(`[dry-run] No changes made. Re-run without --dry-run to import.`);
+    return;
+  }
+
   const { username, password } = await getCredentials();
   console.log("Logging in...");
   const login = await api("/api/auth/login", { method: "POST", body: { username, password } });
@@ -146,12 +235,6 @@ async function main() {
   const existing = await api("/api/admin/collection/cards", { token });
   const existingCards = existing.cards || [];
   console.log(`Worker currently has ${existingCards.length} stored card(s).`);
-
-  if (DRY_RUN) {
-    console.log(`[dry-run] Would ${KEEP_EXISTING ? "keep" : "delete"} ${existingCards.length} existing card(s).`);
-    console.log(`[dry-run] Would import ${cards.length} entries.`);
-    return;
-  }
 
   if (!KEEP_EXISTING && existingCards.length) {
     console.log(`Deleting ${existingCards.length} existing card(s)...`);
@@ -165,8 +248,7 @@ async function main() {
   console.log(`Importing ${cards.length} entries...`);
   let ok = 0;
   const failures = [];
-  for (let i = 0; i < cards.length; i++) {
-    const card = cards[i];
+  for (const card of cards) {
     try {
       await api("/api/admin/collection/cards", { method: "POST", token, body: toEntryBody(card) });
       ok++;
@@ -179,6 +261,7 @@ async function main() {
 
   const verify = await api("/api/admin/collection/cards", { token });
   console.log(`Done. Imported ${ok}/${cards.length}. Worker now stores ${(verify.cards || []).length} card(s).`);
+  console.log("Live pricing and history will populate as the worker refreshes each tracked item.");
   if (failures.length) {
     console.log(`${failures.length} failure(s):`);
     for (const f of failures) console.log(`  - ${f.label}: ${f.error}`);
