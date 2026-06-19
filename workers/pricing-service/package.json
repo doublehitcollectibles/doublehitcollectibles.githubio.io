@@ -8,7 +8,8 @@
     "cf-typegen": "wrangler types",
     "deploy": "wrangler deploy",
     "dev": "wrangler dev",
-    "hash-password": "node ./scripts/generate-password-hash.mjs"
+    "hash-password": "node ./scripts/generate-password-hash.mjs",
+    "import-showcase": "node ./scripts/import-collectr-showcase.mjs"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20260416.2",
