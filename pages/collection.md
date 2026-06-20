@@ -41,6 +41,33 @@ page_class: collection-page
       <h2>Tracked Collection</h2>
       <p>Double Hit Collectibles tracked cards and products, rendered with PriceCharting-backed raw and PSA 10 market data across the collection.</p>
     </div>
+    <div class="collection-toolbar" data-collection-toolbar hidden>
+      <div class="collection-toolbar-filters" role="group" aria-label="Filter tracked collection by type">
+        <button type="button" class="collection-toolbar-chip is-active" data-owned-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="collection-toolbar-chip" data-owned-filter="cards" aria-pressed="false">Cards</button>
+        <button type="button" class="collection-toolbar-chip" data-owned-filter="sealed" aria-pressed="false">Sealed</button>
+        <button type="button" class="collection-toolbar-chip" data-owned-filter="psa10" aria-pressed="false">PSA 10</button>
+      </div>
+      <div class="collection-toolbar-controls">
+        <label class="screen-reader-text" for="collection-owned-search">Filter tracked collection</label>
+        <input
+          id="collection-owned-search"
+          type="search"
+          class="collection-toolbar-search"
+          placeholder="Filter by name, set, or number"
+          autocomplete="off"
+          data-owned-filter-text
+        />
+        <label class="screen-reader-text" for="collection-owned-sort">Sort tracked collection</label>
+        <select id="collection-owned-sort" class="collection-toolbar-sort" data-owned-sort>
+          <option value="value-desc">Value: high to low</option>
+          <option value="value-asc">Value: low to high</option>
+          <option value="name-asc">Name: A to Z</option>
+          <option value="set-asc">Set: A to Z</option>
+        </select>
+        <span class="collection-toolbar-count" data-owned-count aria-live="polite"></span>
+      </div>
+    </div>
     <div class="collection-grid" data-owned-grid></div>
     <div class="collection-empty" data-owned-empty hidden>
       Sign in on the manage page to add cards to your Cloudflare-backed collection inventory.

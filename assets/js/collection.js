@@ -18,6 +18,11 @@
     searchFeedback: app.querySelector("[data-search-feedback]"),
     searchResults: app.querySelector("[data-search-results]"),
     detailPanel: app.querySelector("[data-card-detail-panel]"),
+    ownedToolbar: app.querySelector("[data-collection-toolbar]"),
+    ownedCount: app.querySelector("[data-owned-count]"),
+    ownedSort: app.querySelector("[data-owned-sort]"),
+    ownedFilterText: app.querySelector("[data-owned-filter-text]"),
+    ownedFilterButtons: Array.from(app.querySelectorAll("[data-owned-filter]")),
   };
 
   const defaultDetailPanelMarkup = elements.detailPanel?.innerHTML || "";
@@ -38,6 +43,7 @@
     selectionRequestId: 0,
     sourceMode: apiBase ? "worker" : "fallback",
     ownedCardRefreshRunId: 0,
+    ownedView: { filter: "all", text: "", sort: "value-desc" },
   };
 
   let resizeTimer = 0;
@@ -1271,8 +1277,117 @@
     });
   }
 
+  function getOwnedCardQuantity(card) {
+    const quantity = Number(card?.ownershipMetrics?.quantity ?? card?.ownership?.quantity ?? 1);
+    return Number.isFinite(quantity) && quantity > 0 ? quantity : 1;
+  }
+
+  function getOwnedCardValue(card) {
+    const currentValue = card?.ownershipMetrics?.currentValue;
+
+    if (typeof currentValue === "number" && !Number.isNaN(currentValue)) {
+      return currentValue;
+    }
+
+    const rawVariant = getPriceVariant(card, "raw");
+    const price =
+      typeof rawVariant?.currentPrice === "number"
+        ? rawVariant.currentPrice
+        : typeof card?.pricing?.currentPrice === "number"
+          ? card.pricing.currentPrice
+          : 0;
+
+    return price * getOwnedCardQuantity(card);
+  }
+
+  function isSealedCollectionCard(card) {
+    return /sealed/i.test(normalizeDisplayText(card?.supertype)) || /sealed/i.test(normalizeDisplayText(card?.category));
+  }
+
+  function isPsa10CollectionCard(card) {
+    return normalizeOwnershipPriceVariant(card?.ownership?.ownershipPriceVariant) === "psa10";
+  }
+
+  function matchesOwnedFilter(card) {
+    switch (state.ownedView.filter) {
+      case "cards":
+        return !isSealedCollectionCard(card);
+      case "sealed":
+        return isSealedCollectionCard(card);
+      case "psa10":
+        return isPsa10CollectionCard(card);
+      default:
+        return true;
+    }
+  }
+
+  function matchesOwnedText(card) {
+    const query = state.ownedView.text.trim().toLowerCase();
+
+    if (!query) {
+      return true;
+    }
+
+    const haystack = [getCardDisplayTitle(card), card?.setName, card?.number, buildCollectionSubtitle(card)]
+      .map((value) => normalizeDisplayText(value).toLowerCase())
+      .join(" ");
+
+    return haystack.includes(query);
+  }
+
+  function getVisibleOwnedCards() {
+    const compareByName = (left, right) =>
+      getCardDisplayTitle(left).localeCompare(getCardDisplayTitle(right), undefined, { sensitivity: "base" });
+
+    return state.ownedCards
+      .filter((card) => matchesOwnedFilter(card) && matchesOwnedText(card))
+      .sort((left, right) => {
+        switch (state.ownedView.sort) {
+          case "value-asc":
+            return getOwnedCardValue(left) - getOwnedCardValue(right) || compareByName(left, right);
+          case "name-asc":
+            return compareByName(left, right);
+          case "set-asc":
+            return (
+              normalizeDisplayText(left.setName).localeCompare(normalizeDisplayText(right.setName), undefined, {
+                sensitivity: "base",
+              }) || compareByName(left, right)
+            );
+          default:
+            return getOwnedCardValue(right) - getOwnedCardValue(left) || compareByName(left, right);
+        }
+      });
+  }
+
+  function updateOwnedToolbar(visibleCount) {
+    const total = state.ownedCards.length;
+
+    if (elements.ownedToolbar) {
+      elements.ownedToolbar.hidden = total === 0;
+    }
+
+    if (elements.ownedCount) {
+      elements.ownedCount.textContent = total ? `Showing ${visibleCount} of ${total}` : "";
+    }
+
+    elements.ownedFilterButtons.forEach((button) => {
+      const isActive = button.getAttribute("data-owned-filter") === state.ownedView.filter;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+  }
+
   function renderOwnedGrid() {
-    renderCardGrid(state.ownedCards, elements.ownedGrid, "owned");
+    const visibleCards = getVisibleOwnedCards();
+    updateOwnedToolbar(visibleCards.length);
+
+    if (!visibleCards.length && state.ownedCards.length) {
+      elements.ownedGrid.innerHTML =
+        '<p class="collection-grid-empty-filtered">No tracked items match these filters. Try a different type or clear the search.</p>';
+      return;
+    }
+
+    renderCardGrid(visibleCards, elements.ownedGrid, "owned");
   }
 
   function renderSearchResultsGrid() {
@@ -1757,7 +1872,41 @@
     renderSearchResultsGrid();
   }
 
+  function bindOwnedToolbar() {
+    elements.ownedFilterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const nextFilter = button.getAttribute("data-owned-filter") || "all";
+
+        if (state.ownedView.filter === nextFilter) {
+          return;
+        }
+
+        state.ownedView.filter = nextFilter;
+        renderOwnedGrid();
+      });
+    });
+
+    if (elements.ownedSort) {
+      elements.ownedSort.addEventListener("change", () => {
+        state.ownedView.sort = elements.ownedSort.value || "value-desc";
+        renderOwnedGrid();
+      });
+    }
+
+    if (elements.ownedFilterText) {
+      let filterTextTimer = 0;
+      elements.ownedFilterText.addEventListener("input", () => {
+        window.clearTimeout(filterTextTimer);
+        filterTextTimer = window.setTimeout(() => {
+          state.ownedView.text = elements.ownedFilterText.value || "";
+          renderOwnedGrid();
+        }, 120);
+      });
+    }
+  }
+
   function bindEvents() {
+    bindOwnedToolbar();
     elements.searchFeedback.textContent = getCollectibleSearchPrompt();
 
     elements.searchForm.addEventListener("submit", (event) => {

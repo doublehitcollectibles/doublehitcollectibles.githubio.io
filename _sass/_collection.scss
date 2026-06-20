@@ -122,6 +122,112 @@ body.collection-page footer a:focus-visible {
   margin-bottom: 10px;
 }
 
+.collection-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.collection-toolbar[hidden] {
+  display: none;
+}
+
+.collection-toolbar-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.collection-toolbar-chip {
+  appearance: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--collection-text-soft);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  padding: 7px 14px;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+
+.collection-toolbar-chip:hover,
+.collection-toolbar-chip:focus-visible {
+  color: var(--collection-text-primary);
+  border-color: rgba(255, 214, 68, 0.5);
+  outline: none;
+}
+
+.collection-toolbar-chip.is-active {
+  color: #0b1118;
+  background: rgba(255, 214, 68, 0.94);
+  border-color: rgba(255, 214, 68, 0.94);
+}
+
+.collection-toolbar-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.collection-toolbar-search,
+.collection-toolbar-sort {
+  font: inherit;
+  font-size: 0.85rem;
+  color: var(--collection-text-primary);
+  background: rgba(8, 16, 20, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  padding: 8px 12px;
+}
+
+.collection-toolbar-search {
+  min-width: 220px;
+}
+
+.collection-toolbar-search::placeholder {
+  color: var(--collection-text-faint);
+}
+
+.collection-toolbar-search:focus-visible,
+.collection-toolbar-sort:focus-visible {
+  outline: none;
+  border-color: rgba(255, 214, 68, 0.6);
+}
+
+.collection-toolbar-sort option {
+  color: #0b1118;
+}
+
+.collection-toolbar-count {
+  font-size: 0.8rem;
+  color: var(--collection-text-faint);
+  white-space: nowrap;
+}
+
+.collection-grid-empty-filtered {
+  color: var(--collection-text-soft);
+  padding: 18px 4px;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .collection-toolbar-controls {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .collection-toolbar-search {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
 .collection-grid-wrap--tracked .collection-grid {
   grid-template-columns: repeat(auto-fill, minmax(172px, 196px));
   justify-content: start;
