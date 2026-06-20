@@ -474,6 +474,99 @@ body.collection-page footer a:focus-visible {
   color: rgba(242, 247, 252, 0.92);
 }
 
+.collection-breakdown {
+  grid-column: 1 / -1;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.collection-breakdown-rows {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.collection-breakdown-row {
+  display: grid;
+  grid-template-columns: auto 64px 1fr auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.collection-breakdown-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.collection-breakdown-row--cards .collection-breakdown-dot {
+  background: #4aa8ff;
+}
+
+.collection-breakdown-row--graded .collection-breakdown-dot {
+  background: #ffd84a;
+}
+
+.collection-breakdown-row--sealed .collection-breakdown-dot {
+  background: #5ee0a0;
+}
+
+.collection-breakdown-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--collection-text-primary);
+}
+
+.collection-breakdown-bar {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.collection-breakdown-bar > span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.collection-breakdown-row--cards .collection-breakdown-bar > span {
+  background: #4aa8ff;
+}
+
+.collection-breakdown-row--graded .collection-breakdown-bar > span {
+  background: #ffd84a;
+}
+
+.collection-breakdown-row--sealed .collection-breakdown-bar > span {
+  background: #5ee0a0;
+}
+
+.collection-breakdown-meta {
+  font-size: 0.8rem;
+  color: var(--collection-text-soft);
+  white-space: nowrap;
+}
+
+@media (max-width: 520px) {
+  .collection-breakdown-row {
+    grid-template-columns: auto 1fr;
+    row-gap: 4px;
+  }
+
+  .collection-breakdown-bar {
+    display: none;
+  }
+
+  .collection-breakdown-meta {
+    grid-column: 2;
+    text-align: right;
+  }
+}
+
 .collection-section-heading {
   display: flex;
   justify-content: space-between;

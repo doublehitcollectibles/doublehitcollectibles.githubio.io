@@ -934,6 +934,43 @@
     const deltaPercent = investedValue > 0 ? (deltaValue / investedValue) * 100 : null;
     const currency = state.ownedCollection.currency || "USD";
 
+    const breakdownBuckets = [
+      { key: "cards", name: "Cards", test: (card) => !isSealedCollectionCard(card) && !isPsa10CollectionCard(card) },
+      { key: "graded", name: "Graded", test: (card) => !isSealedCollectionCard(card) && isPsa10CollectionCard(card) },
+      { key: "sealed", name: "Sealed", test: (card) => isSealedCollectionCard(card) },
+    ]
+      .map((bucket) => {
+        const items = cards.filter(bucket.test);
+        return {
+          ...bucket,
+          units: items.reduce((sum, card) => sum + getOwnedCardQuantity(card), 0),
+          value: items.reduce((sum, card) => sum + getOwnedCardValue(card), 0),
+        };
+      })
+      .filter((bucket) => bucket.units > 0);
+    const breakdownTotal = breakdownBuckets.reduce((sum, bucket) => sum + bucket.value, 0) || 1;
+    const breakdownMarkup =
+      cards.length && breakdownBuckets.length
+        ? `
+      <article class="collection-breakdown">
+        <p class="collection-metric-label">Holdings Breakdown</p>
+        <div class="collection-breakdown-rows">
+          ${breakdownBuckets
+            .map((bucket) => {
+              const share = Math.round((bucket.value / breakdownTotal) * 100);
+              return `
+              <div class="collection-breakdown-row collection-breakdown-row--${bucket.key}">
+                <span class="collection-breakdown-dot"></span>
+                <span class="collection-breakdown-name">${escapeHtml(bucket.name)}</span>
+                <span class="collection-breakdown-bar"><span style="width: ${share}%;"></span></span>
+                <span class="collection-breakdown-meta">${bucket.units} · ${formatCurrency(bucket.value, currency)} (${share}%)</span>
+              </div>`;
+            })
+            .join("")}
+        </div>
+      </article>`
+        : "";
+
     elements.summary.innerHTML = `
       <article class="collection-metric">
         <p class="collection-metric-label">Tracked Items</p>
@@ -955,6 +992,7 @@
         <p class="collection-metric-value">${formatCurrency(deltaValue, currency)}</p>
         <p class="collection-metric-subtext">${deltaPercent != null ? formatPercent(deltaPercent) : "Add purchase prices to calculate returns"}</p>
       </article>
+      ${breakdownMarkup}
     `;
   }
 
